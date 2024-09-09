@@ -5,6 +5,6 @@ module.exports = (sequelize, DataTypes) => {
         id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
         nome: DataTypes.STRING,
         cpf: DataTypes.STRING,
-        telefone: DataTypes.STRING},{timestamps: false, tableName: 'pessoas'})
+        telefone: {type: DataTypes.STRING, validate: { is: /^\(\d{2}\)\s?\d{4,5}\-\d{4}$/  }}},{timestamps: false, tableName: 'pessoas'})
     return Pessoa
 }
